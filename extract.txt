@@ -1,4 +1,4 @@
-.load clangql
+.load libclangql.so
 CREATE VIRTUAL TABLE llvm_symbols USING clangql (symbols, localhost:50051);
 CREATE VIRTUAL TABLE llvm_base_of USING clangql (base_of, localhost:50051);
 CREATE VIRTUAL TABLE llvm_overridden_by USING clangql (overridden_by, localhost:50051);
