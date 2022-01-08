@@ -1,0 +1,23 @@
+name: Generate list
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Prepare container
+        run: |
+          apt update
+          apt install -y wget unzip sqlite3
+          wget https://github.com/uazo/ClangQL/releases/download/v0.3/ClangQL.zip
+          unzip ClangQL.zip
+          rm ClangQL.zip
+          
+          sqlite3 --version
+          docker run -ti --rm -p 50051:50051 uazo/bromite-remote-index:5b6a7442e0c41d682efd0670755240f08563225a
+          sqlite3 < extract.txt
+          
