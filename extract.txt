@@ -1,8 +1,8 @@
 .load /home/runner/work/bromite-flags-list/bromite-flags-list/libclangql
+
 CREATE VIRTUAL TABLE llvm_symbols USING clangql (symbols, localhost:50051);
 CREATE VIRTUAL TABLE llvm_base_of USING clangql (base_of, localhost:50051);
 CREATE VIRTUAL TABLE llvm_overridden_by USING clangql (overridden_by, localhost:50051);
 CREATE VIRTUAL TABLE llvm_refs USING clangql (refs, localhost:50051);
 
-SELECT * FROM llvm_symbols WHERE Name = "Feature" and scope = "base::";
 SELECT * FROM llvm_symbols WHERE type = "c:$@N@base@S@Feature";
