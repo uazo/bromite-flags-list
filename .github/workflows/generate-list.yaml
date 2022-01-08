@@ -22,5 +22,6 @@ jobs:
           
           sqlite3 --version
           docker run -d -p 50051:50051 uazo/bromite-remote-index:5b6a7442e0c41d682efd0670755240f08563225a
+          sleep 1m
           sqlite3 < bromite-flags-list/extract.txt
           
