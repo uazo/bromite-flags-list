@@ -8,7 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      
+        with:
+          path: bromite-flags-list
+          fetch-depth: 1
+          
       - name: Prepare container
         run: |
           sudo apt update
