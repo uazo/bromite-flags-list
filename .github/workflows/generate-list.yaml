@@ -32,10 +32,18 @@ jobs:
           docker run -d -p 50051:50051 uazo/bromite-remote-index:$RTAG
           sleep 1m
           sqlite3 -separator '=%=' <bromite-flags-list/extract.txt >output.txt
+          
+      - name: Generate
+        run: |
+          wget https://github.com/uazo/superpatch/releases/latest/download/SuperPatchUtils.tar.gz
+          tar xfz SuperPatchUtils.tar.gz
+          bin/SuperPatchUtils parse-flags $RTAG output.txt out
+          mv output.txt out
+          tar czvf output.tar.gz out
 
       - name: Publish
         uses: actions/upload-artifact@v2
         with:
-          name: output.txt
-          path: output.txt
+          name: output.tar.gz
+          path: output.tar.gz
           
