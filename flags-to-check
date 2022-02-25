@@ -1,0 +1,34 @@
+# Privacy
+
+# v98
+
+# https://bugs.chromium.org/p/chromium/issues/detail?id=1252460
+# https://docs.google.com/document/d/15HVLD6nddA0OaI8Dd0ayBP2jlGw5JpRD-njAyY1oNZo/edit
+# timing attack, Programmatically repeated navigations in iframe
+kCssSelectorFragmentAnchor=0
+
+# Enables FedCM API JavaScript API
+# https://fedidcg.github.io/FedCM/
+kFedCm=0 
+
+# First-Party Sets component v2
+kFirstPartySetsV2ComponentFormat=?
+
+# Currently there are two paths - legacy code, in which BrowsingContextState
+# will be 1:1 with FrameTreeNode, allowing us to move proxy storage to it as a
+# no-op, and a new path hidden behind a feature flag, which will create a new
+# BrowsingContextState for cross-BrowsingInstance navigations.
+kNewBrowsingContextStateOnBrowsingContextGroupSwap=?
+
+# If enabled, an absent Origin-Agent-Cluster: header is interpreted as
+# requesting an origin agent cluster, but in the same process.
+kOriginAgentClusterDefaultEnabled=?
+
+# Enables the Aggregation Service. See crbug.com/1207974.
+kPrivacySandboxAggregationService=?
+
+# This feature enables use of ULP language data in Chrome.
+kUseULPLanguagesInChrome=?
+
+# Enables new behavior for window.open() and BarProp properties.
+kWindowOpenNewPopupBehavior=?
