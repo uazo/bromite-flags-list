@@ -32,3 +32,85 @@ kUseULPLanguagesInChrome=?
 
 # Enables new behavior for window.open() and BarProp properties.
 kWindowOpenNewPopupBehavior=?
+
+#########
+# v99
+#########
+kActivateMetricsReportingEnabledPolicyAndroid=?
+
+# https://github.com/google/omaha/blob/master/doc/ServerProtocolV3.md
+# send getDeviceID() if kAnonymousUpdateChecks=0
+kAnonymousUpdateChecks=1 # enabled by default
+
+# Shows a confirmation modal dialog when clicking 'Close all tabs' in the
+# app menu.
+kCloseAllTabsModalDialog=1
+
+# Enable force installed Chrome apps policy migration.
+# kDefaultChromeAppsMigration=?
+
+kDisableWebCache=? # (TODO)
+
+# Enable drag and drop images and links from web contents on Android
+#kDragAndDropAndroid=? # unused
+
+# Enables loading the response body earlier in navigation.
+kEarlyBodyLoad=0 # disabled by prefetch disabled
+
+# https://bugs.chromium.org/p/chromium/issues/detail?id=1290944
+kFasterSetCookie=1 # (TODO) can be enabled
+
+# If enabled, limits the number of FLEDGE auctions that can be run between page
+# load and unload -- any attempt to run more than this number of auctions will
+# fail (return null to JavaScript).
+kFledgeLimitNumAuctions=0
+kFledgeLimitNumAuctionsParam=0
+
+# bluetooth driver, only chromeos
+# kFlossEnabled=?
+
+# Enable global VA-API lock. Disable this to use lock-free VA-API function
+# calls for thread safe backends.
+# https://source.chromium.org/chromium/chromium/src/+/334b915c11a64b9255687e75ce5fbb73ca29e4ac
+# kGlobalVaapiLock=? (TODO)
+
+# Add flags for improving reader mode prompt
+# https://chromium-review.googlesource.com/c/chromium/src/+/3447312
+# https://chromium-review.googlesource.com/c/chromium/src/+/3448081/7
+# kImproveReaderModePrompt=? # no privacy issue, currently disabled
+
+# If enabled, Google Photos opt-in card will show a button to soft opt-out.
+kNtpPhotosModuleSoftOptOut=0
+
+# Whether the StoragePolicyObserver only sends updates for modified origins.
+# kOnlySendStoragePolicyUpdatesForModifiedOrigins=? (TOCHECK)
+kPermissionOnDeviceNotificationPredictions=0
+
+#kPrivacySandboxSettings3=?
+
+# Enables Private Network Access checks for all types of web workers.
+#
+# This affects initial worker script fetches, fetches initiated by workers
+# themselves, and service worker update fetches.
+#
+# The exact checks run are the same as for other document subresources, and
+# depend on the state of other Private Network Access feature flags:
+#
+#  - `kBlockInsecurePrivateNetworkRequests`
+#  - `kPrivateNetworkAccessSendPreflights`
+#  - `kPrivateNetworkAccessRespectPreflightResults`
+# kPrivateNetworkAccessForWorkers=? # 0
+
+# send sampled pings 
+# kSendSampledPingsForProtegoAllowlistDomains=0 # disabled by safebrowsing disabled
+
+# preloading in non active
+# kShowExtendedPreloadingSetting=?
+
+# Enables use of Google Mobile Services for password storage. Chrome's local
+# database will be unused but kept in sync for local passwords.
+kUnifiedPasswordManagerAndroid=0
+kUnifiedPasswordManagerShadowWriteOperationsAndroid=0
+
+# Whether to use the leveldb-based page entities metadata provider
+kUseLocalPageEntitiesMetadataProvider=0
