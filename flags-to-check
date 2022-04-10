@@ -114,3 +114,59 @@ kUnifiedPasswordManagerShadowWriteOperationsAndroid=0
 
 # Whether to use the leveldb-based page entities metadata provider
 kUseLocalPageEntitiesMetadataProvider=0
+
+#########
+# v100
+#########
+
+# Apply lazy-loading to ad frames which have embeds likely impacting Core Web\nVitals.
+kAutomaticLazyFrameLoadingToAds=? # 0
+
+kClientHintsPartitionedCookies=0
+
+# Introduce a new COOP value, Same-Origin-Opener-Policy-Plus-Coep, which grants\ncross-origin isolation. 
+# This used mainly for testing the process model and\nshould not be enabled in any production code.
+# \nSee https://crbug.com/1221127.
+kCoopSameOriginAllowPopupsPlusCoep = ? # 0
+
+# DestroyProfileOnBrowserClose only covers deleting regular (non-System)\nProfiles. 
+# This flags lets us destroy the System Profile, as well.
+# kDestroySystemProfiles = ? # 0
+
+# If enabled, the client hints cache will be loaded on browser restarts.
+kDurableClientHintsCache=0
+
+# Enables the `sec-ch-ua-full` client hint to be sent along with the full user
+# agent string in the HTTP request headers, as well as surfacing the full user
+# agent string in the JS APIs (navigator.userAgent, etc).
+kFullUserAgent=0
+
+# [UrlParamFilter] Add param filtering to server and client redirects
+# https://source.chromium.org/chromium/chromium/src/+/480392e193c510a732d3369e0eec65dbf3863ecf
+kIncognitoParamFilterEnabled=1
+
+# Allow process isolation of iframes with the 'sandbox' attribute set. Whether
+# or not such an iframe will be isolated may depend on options specified with
+# the attribute. Note: At present, only iframes with origin-restricted
+# sandboxes are isolated.
+kIsolateSandboxedIframes=1 # 0 # check ParseWebSandboxPolicy()
+
+# Switches Cross-Origin Read Blocking (CORB) to use an early implementation of
+# Opaque Response Blocking (ORB, aka CORB++) behind the scenes.
+# This is ORB v0.1 - it doesn't implement the full spec from
+# https://github.com/annevk/orb:
+# - No Javascript sniffing is done.  Instead the implementation uses all
+# of CORB's confirmation sniffers (for HTML, XML and JSON).
+# - Blocking is still done by injecting an empty response rather than erroring
+# out the network request
+# - See other differences in the \"ORB v0.1 vs full ORB differences\" section in
+# https://docs.google.com/document/d/1qUbE2ySi6av3arUEw5DNdFJIKKBbWGRGsXz_ew3S7HQ/edit#heading=h.mptmm5bpjtdn
+# Implementing ORB in Chromium is tracked in https://crbug.com/1178928
+kOpaqueResponseBlockingV01= ?
+
+# Enables the page entities model to be annotated on every page load.
+kPageEntitiesPageContentAnnotations=0
+
+# When enabled, certain operations in the HTTP cache are brokered to allow\nthe network process to be sandboxed.
+# actually unused
+kSandboxHttpCache=?
