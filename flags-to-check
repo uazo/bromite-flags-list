@@ -170,3 +170,108 @@ kPageEntitiesPageContentAnnotations=0
 # When enabled, certain operations in the HTTP cache are brokered to allow\nthe network process to be sandboxed.
 # actually unused
 kSandboxHttpCache=?
+
+#########
+# v101
+#########
+
+# Kill switch for the Topics API.
+kBrowsingTopics = 0
+
+# Controls whether the Digital Goods API is enabled.
+# https://github.com/WICG/digital-goods/
+kDigitalGoodsApi = ? # actually enabled
+
+# Forces the `frame_origin` value in IsolationInfo to the `top_level_origin`
+# value when an IsolationInfo instance is created. This is to enable
+# expirimenting with double keyed network partitions.
+kForceIsolationInfoFrameOriginToTopLevelFrame = 0
+
+# If enabled, the setTimeout(..., 0) will clamp to 4ms after a custom `nesting`
+# level.
+# Tracking bug: https://crbug.com/1108877.
+kMaxUnthrottledTimeoutNestingLevel = 1 # actually disabled
+
+# Allow cross-context transfer of MediaStreamTracks.
+kMediaStreamTrackTransfer = ? # actually disabled
+
+# If enabled, Omnibox reports the Assisted Query Stats in the aqs= param in the
+# Search Results Page URL.
+# https://source.chromium.org/chromium/chromium/src/+/e2ad407421b119f069f44fa4d8f9a01ee2d3ee73
+kReportAssistedQueryStats = 0 # actually enabled
+
+# If enabled, Omnibox reports the Searchbox Stats in the gs_lcrp= param in the
+# Search Results Page URL.
+kReportSearchboxStats = 0 # actually disabled
+
+# Gates sandboxed iframe navigation toward external protocol behind any of:
+# - allow-top-navigation
+# - allow-top-navigation-to-custom-protocols
+# - allow-top-navigation-with-user-gesture (+ user gesture)
+# - allow-popups
+# Motivation:
+# Developers are surprised that a sandboxed iframe can navigate and/or
+# redirect the user toward an external application.
+# General iframe navigation in sandboxed iframe are not blocked normally,
+# because they stay within the iframe. However they can be seen as a popup or
+# a top-level navigation when it leads to opening an external application. In
+# this case, it makes sense to extend the scope of sandbox flags, to block
+# malvertising.
+# Implementation bug: https://crbug.com/1253379
+# I2S: https://groups.google.com/a/chromium.org/g/blink-dev/c/-t-f7I6VvOI
+# To be enabled in M103
+kSandboxExternalProtocolBlocked = 1 # actually disabled
+
+
+#########
+# v102
+#########
+
+# Enables the "About this site" banner.
+kAboutThisSiteBanner=?
+
+# Auxiliary search for Android. See http://crbug/1310100 for more details.
+kAndroidAuxiliarySearch=? # actually disabled
+
+# Define the allowed websites to use LazyEmbeds. The allowed websites need to
+# be defined separately from kAutomaticLazyFrameLoadingToEmbeds because we want
+# to gather Blink.AutomaticLazyLoadFrame.LazyEmbedFrameCount UKM data even when
+# kAutomaticLazyFrameLoadingToEmbeds is disabled.
+kAutomaticLazyFrameLoadingToEmbedUrls=? # actually disabled
+
+# When enabled, cookies cannot have an expiry date further than 400 days in the
+# future.
+kClampCookieExpiryTo400Days=? # actually disabled
+
+# Enable `save-data` client hint.
+kClientHintsSaveData=0 # actually enabled
+
+# Crash the browser process if a child process is created which does not match
+# the browser process regardless of whether the browser package appears to have
+# changed.
+kCrashBrowserOnAnyChildMismatch=1 # actually disabled
+kCrashBrowserOnChildMismatchIfBrowserChanged=1 # actually disabled
+
+# Enables service workers on chrome-untrusted:// urls.
+kEnableServiceWorkersForChromeUntrusted=0 # actually disabled
+
+# Kill switch for FedCm manifest validation.
+# check for content/browser/webid/idp_network_request_manager.cc (cookies enabled)
+kFedCmManifestValidation=0 # actually enabled
+
+# When enabled, then we allow partitioned cookies even if kPartitionedCookies
+# is disabled only if the cookie partition key contains a nonce. So far, this
+# is used to create temporary cookie jar partitions for fenced and anonymous
+# frames.
+kNoncedPartitionedCookies=? # actually disabled
+
+kPrivacyGuide2=? # actually disabled
+
+# Enables the Chrome Android WebAPK-install service.
+kWebApkInstallService=?
+
+# Enables the deprecated syntax for the above \"launch_handler\": {
+# \"route_to\": \"existing-client\",
+# \"navigate_existing_client: \"always\" | \"never\"
+# }
+kWebAppEnableLaunchHandlerV1API=?
