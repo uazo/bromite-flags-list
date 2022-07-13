@@ -275,3 +275,45 @@ kWebApkInstallService=?
 # \"navigate_existing_client: \"always\" | \"never\"
 # }
 kWebAppEnableLaunchHandlerV1API=?
+
+
+#########
+# v103
+#########
+
+kAppServiceCrosApiOnAppsWithoutMojom=?
+
+# Kill switch for computing heuristics other than the active ones
+# (GetActivePatternSource()).
+# https://chromium-review.googlesource.com/c/chromium/src/+/3613396
+kAutofillDisableShadowHeuristics=? # actually disabled
+
+# When enabled, candidate profiles are temporary stored on import, and merged
+# with future candidate profiles, to create an importable profile. This makes
+# importing from multi-step input flows possible.
+# https://source.chromium.org/chromium/chromium/src/+/3600901c30d6878bd8b5c8d08863c4b695827a64
+kAutofillEnableMultiStepImports=? # actually disabled
+
+# When enabled, autofill will use the new ranking algorithm for card and
+# profile autofill suggestions.
+# https://source.chromium.org/chromium/chromium/src/+/d46a36987fff0c4e3c367257f5c66fca965684f0
+kAutofillEnableRankingFormula=? # actually disabled
+
+# This experiment sends a list to Chrome of 100 <URL, hash> pairs whose payloads are considered pervasive
+# (the "pervasive payloads list"). During the three-week experiment period, if Chrome fetches a payload
+# that matches both the URL and its hash on the pervasive payloads list, it is inserted into a local
+# single-keyed cache. This payload is then available for use by Chrome when loading pages on other 
+# sites that include the matching URL. All other fetches for URLs not on the pervasive payloads
+# list are cached according to the existing split HTTP cache.
+# https://groups.google.com/a/chromium.org/g/blink-dev/c/9xWJK3IgJb4/m/SYLfUccOBgAJ
+kCacheTransparency=? # actually disabled
+kPervasivePayloadsList=? # actually disabled
+
+# Feature that when enabled completely removes all Feeds from chrome.
+kIsAblated=1 # actually disabled
+
+# Enables configuring the on-device clustering backend.
+kOnDeviceClustering=0 # actually enabled
+
+# If enabled, expose non-standard stats in the WebRTC getStats API.
+kWebRtcExposeNonStandardStats=0 # actually disabled
