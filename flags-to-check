@@ -317,3 +317,29 @@ kOnDeviceClustering=0 # actually enabled
 
 # If enabled, expose non-standard stats in the WebRTC getStats API.
 kWebRtcExposeNonStandardStats=0 # actually disabled
+
+
+#########
+# v104
+#########
+
+kShoppingList=0
+
+# When enabled, cookies with a non-ASCII domain attribute will be rejected.
+kCookieDomainRejectNonASCII=1 # actually disabled
+
+# Introduce a new COOP value: restrict-properties. It restricts window
+# properties that can be accessed by other pages. This also grants
+# crossOriginIsolated if coupled with an appropriate COEP header.
+# This used solely for testing the process model and should not be enabled in
+# any production code. See https://crbug.com/1221127.
+kCoopRestrictProperties=?
+
+# Whether the pending beacon API is enabled or not.
+# https://github.com/darrenw/docs/blob/main/explainers/beacon_api.md
+kPendingBeaconAPI=0 # actually disabled
+
+# Enables support for the `Variants` response header and reduce
+# accept-language. https://github.com/Tanych/accept-language
+# (uazo) need some work in ComputeAcceptLanguage()
+kReduceAcceptLanguage=? # actually disabled
