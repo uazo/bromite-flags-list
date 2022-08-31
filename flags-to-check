@@ -343,3 +343,43 @@ kPendingBeaconAPI=0 # actually disabled
 # accept-language. https://github.com/Tanych/accept-language
 # (uazo) need some work in ComputeAcceptLanguage()
 kReduceAcceptLanguage=? # actually disabled
+
+
+#########
+# v105
+#########
+
+# Create |mScrollState| and |mGestureStateListener| and start sending real-time engagement
+# signals through {@link androidx.browser.customtabs.CustomTabsCallback}.
+# see CustomTabActivityTabController.maybeStartSendingRealTimeEngagementSignals()
+kCCTRealTimeEngagementSignals=0 # actually disabled
+
+# Allow third-party delegation of client hint information.
+kClientHintThirdPartyDelegation=1 # actually enabled
+
+# Enable support for isolated web apps. This will guard features like serving
+# isolated web apps via the isolated-app:// scheme, and other advanced isolated
+# app functionality. See https://github.com/reillyeon/isolated-web-apps for a
+# general overview.
+kIsolatedWebApps=0 # actually disabled
+
+# see https://bugs.chromium.org/p/chromium/issues/detail?id=1339708
+kNetworkServiceMemoryCache=0 # actually disabled
+
+# Enables the Private Aggregation API. Note that this API also requires the
+# `kPrivacySandboxAggregationService` to be enabled to successfully send
+# reports.
+kPrivateAggregationApi=0 # actually disabled
+
+# see https://bugs.chromium.org/p/chromium/issues/detail?id=1288578
+kScaryExternalNavigationRefactoring = 0? # actually enabled
+
+# Suppress RTC_LOG which are forwarded both to Chrome logs and WebRTC logs.
+kSuppressAllWebRtcLogs = 0 # actually disabled
+
+# Update protocol using ALPN information in HTTPS DNS records
+kUseDnsHttpsSvcbAlpn = ? # actually disabled
+
+# Enable the web lockscreen API implementation
+# (https://github.com/WICG/lock-screen) in Chrome.
+kWebLockScreenApi = ? # actually disabled
