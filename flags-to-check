@@ -383,3 +383,58 @@ kUseDnsHttpsSvcbAlpn = ? # actually disabled
 # Enable the web lockscreen API implementation
 # (https://github.com/WICG/lock-screen) in Chrome.
 kWebLockScreenApi = ? # actually disabled
+
+
+#########
+# v106
+#########
+
+# Gate access to the AnonymousIframe origin trial. This is useful on its own,
+# because the OT infrastructure doesn't check Chrome's version. It means token
+# generated for the OT applies immediately to every Chrome versions. The
+# feature flag allows Chrome developers to restrict the access to the first
+# fully supported version.
+#
+# UAZO: anonymous iframe are active in v106
+kAnonymousIframeOriginTrial = ?  # actually enabled
+
+# Accumulates the fetch requests for resources while parsing chunks of HTML so
+# they can be evaluated, prioritized and processed as a group rather than as
+# they are discovered.
+kBatchFetchRequests= ? # actually disabled
+
+# Creates a <double key + is_cross_site> NetworkAnonymizationKey which is used
+# to partition the network state. This double key will have the following
+# properties: `top_frame_site` -> the schemeful site of the top level page.
+# `frame_site ` -> nullopt
+# `is_cross_site` -> true if the `top_frame_site` is cross site when compared
+# to the frame site. The frame site will not be stored in this key so the value
+# of is_cross_site will be computed at key construction. This feature overrides
+# `kEnableDoubleKeyNetworkAnonymizationKey` if both are enabled.
+kEnableCrossSiteFlagNetworkAnonymizationKey = ? # actually disabled
+
+# Creates a double keyed NetworkAnonymizationKey which is used to partition the
+# network state. This double key will have the following properties:
+# `top_frame_site` -> the schemeful site of the top level page.
+# `frame_site ` -> nullopt
+# `is_cross_site` -> nullopt
+kEnableDoubleKeyNetworkAnonymizationKey = ? # actually disabled
+
+# If enabled, parser-blocking scripts are loaded asynchronously but the
+# execution order is respected. See https://crbug.com/1344772
+kForceInOrderScript = ? # actually disabled
+
+# see https://source.chromium.org/chromium/chromium/src/+/main:mojo/core/core.cc;l=121;drc=f97e7e130b02a0fee5a06aa9cdf25d3a0a3715d0;bpv=1;bpt=1
+kMojoAvoidRandomPipeId = 0 # actually disabled
+
+# Handle the Link header DNS prefetches and preconnects in the network
+# service instead of through the renderer process.
+kPreconnectInNetworkService = ? # actually disabled
+
+# Gates the non-standard legacy quota API `window.webkitStorageInfo`
+# which is disabled starting M106.
+# TODO(crbug.com/695586): Cleanup on or after M108.
+kPrefixedStorageInfo = 0 # actually disabled
+
+# see crbug.com/1346305 (internal)
+kPrivacySandboxFirstPartySetsUI = ? # actually disabled
