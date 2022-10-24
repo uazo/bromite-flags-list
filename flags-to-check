@@ -438,3 +438,50 @@ kPrefixedStorageInfo = 0 # actually disabled
 
 # see crbug.com/1346305 (internal)
 kPrivacySandboxFirstPartySetsUI = ? # actually disabled
+
+#########
+# v107
+#########
+
+# Whether ALPS parsing is on for client hint parsing specifically.
+kAlpsClientHintParsing=1 # actually enabled
+
+# Whether ALPS parsing is on for any type of frame.
+# see also https://chromestatus.com/feature/5555544540577792
+kAlpsParsing=? # actually enabled
+
+# - kBackForwardCacheSendNotRestoredReasons = {true: {\"requires_origin_trial\":
+# false}} to enable the features globally.
+# - kBackForwardCacheSendNotRestoredReasons = {true: {\"requires_origin_trial\":
+# true}} to enable the features only for execution context with OT token.
+# https://bugs.chromium.org/p/chromium/issues/detail?id=1349228
+# https://bugs.chromium.org/p/chromium/issues/detail?id=1326344
+# https://github.com/rubberyuzu/bfcache-not-retored-reason/blob/main/NotRestoredReason.md#security-and-privacy
+kBackForwardCacheSendNotRestoredReasons=0 # actually disabled
+
+kCommerceAllowOnDemandBookmarkUpdates=0 # actually enabled
+
+kHeapProfilerReporting=0 # actually enabled (upload disabled in bromite)
+
+# Enables process isolation of fenced content (content inside fenced frames)
+# from non-fenced content. See
+# https://github.com/WICG/fenced-frame/blob/master/explainer/process_isolation.md
+# for rationale and more details.
+# see also https://bugs.chromium.org/p/chromium/issues/detail?id=1123606
+# https://docs.google.com/document/d/1HAU9IiHZU4KBPC_rEk3BQYrWTK50PdNGg8CcHhVLXig/edit
+kIsolateFencedFrames=? 
+
+# When enabled, allows other features to use the k-Anonymity Service.
+# see also https://bugs.chromium.org/p/chromium/issues/detail?id=1342255
+kKAnonymityService=?
+kKAnonymityServiceOHTTPRequests=?
+
+# ipcz is a replacement for Mojo Core designed to improve a number of things all
+# at once, affecting performance, security, and code health
+# see also https://bugs.chromium.org/p/chromium/issues/detail?id=1299283
+kMojoIpcz = ? # actually disabled
+
+kPermissionOnDeviceGeolocationPredictions=0 # actually disabled
+
+kStorageAccessAPIForSiteExtension=?
+kStorageAccessAPI=?
