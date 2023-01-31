@@ -485,3 +485,32 @@ kPermissionOnDeviceGeolocationPredictions=0 # actually disabled
 
 kStorageAccessAPIForSiteExtension=?
 kStorageAccessAPI=?
+
+
+#########
+# v108
+#########
+
+# Automatically disables accessibility on Android when no assistive
+# technologies are present
+# see https://bugs.chromium.org/p/chromium/issues/detail?id=1361520
+kAutoDisableAccessibilityV2=?
+
+# Kill switch for blocking form submissions redirecting to apps without an
+# associated user gesture.
+kBlockExternalFormSubmitWithoutGesture=1 # actually enabled
+
+# A tab-under is when a page both opens a popup to some destination (usually where the user wants to go)
+# AND navigates the opener page to some third party content (usually an advertisement).
+# Chrome will block these navigations and show native UI to the user so they can follow the redirect just in case.
+# see https://chromestatus.com/feature/5675755719622656
+# https://bugs.chromium.org/p/chromium/issues/detail?id=661629
+# https://docs.google.com/document/d/1ewmlwRVPyHUa-o63mubIq5qhdbk_kfqSAhdxmJMKvGc/edit#heading=h.nig13ndwosqb
+# https://docs.google.com/document/d/1N-0etmATN6PhQt-m9S8sCgfz88zv8lZ2dBFdqKlzsPg/edit
+# https://source.chromium.org/chromium/chromium/src/+/6dd11d28feba8b8003ef16f82b59cc3af4c6136e
+kBlockTabUnders=1 # actually disabled
+
+# If enabled, the installability criteria for granting PBS permission is
+# dropped and the content setting is checked. This only applies if the
+# requesting origin matches that of the browser's default search engine.
+kPeriodicSyncPermissionForDefaultSearchEngine=0 # actually disabled
