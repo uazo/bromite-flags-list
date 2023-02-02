@@ -514,3 +514,75 @@ kBlockTabUnders=1 # actually disabled
 # dropped and the content setting is checked. This only applies if the
 # requesting origin matches that of the browser's default search engine.
 kPeriodicSyncPermissionForDefaultSearchEngine=0 # actually disabled
+
+
+
+#########
+# v109
+#########
+
+# Gate access to Attribution Reporting cross app and web APIs that allow
+# registering with a native attribution API.
+kAttributionReportingCrossAppWeb=0 # actually disabled
+
+# Enables the DIPS (Detect Incidental Party State) feature.
+# On by default to allow for collecting metrics. All potentially dangerous
+# behavior (database persistence, DIPS deletion) will be gated by params.
+# (Incidental parties are sites without meaningful user interactions, such as bounce trackers.)
+kFeature=? # actually enabled (kDeletionEnabled is disabled)
+
+# TODO(crbug.com/1370433): Remove this flag eventually.
+# When enabled, drag-and-dropped files and directories will be checked against
+# the File System Access blocklist. This feature was disabled since it broke
+# some applications.
+kFileSystemAccessDragAndDropCheckBlocklist=1 # actually disabled
+
+# see https://w3c.github.io/mathml-core/#privacy-considerations
+kMathMLCore=? # actually enabled
+
+# Servicify or sandbox getaddrinfo on Linux/ChromeOS
+# Enables out-of-process system DNS resolution so getaddrinfo() never runs in
+# the network service sandbox. System DNS resolution will instead be brokered
+# out over Mojo, likely to run in the browser process.
+# https://bugs.chromium.org/p/chromium/issues/detail?id=1312224#c5
+# https://source.chromium.org/chromium/chromium/src/+/98b914874c45d92923c8be3063fe5881823ba8ca
+kOutOfProcessSystemDnsResolution=1 # actually disabled
+
+kPostMessageFirstPartyToThirdPartyDifferentBucketSameOriginBlocked=1 # actually disabled
+kPostMessageFirstPartyToThirdPartyDifferentBucketSameOriginBlockedIfStorageIsPartitioned=1 # actually disabled
+kPostMessageThirdPartyToFirstPartyDifferentBucketSameOriginBlocked=1 # actually disabled
+kPostMessageThirdPartyToFirstPartyDifferentBucketSameOriginBlockedIfStorageIsPartitioned=1 # actually disabled
+kPostMessageThirdPartyToThirdPartyDifferentBucketSameOriginBlocked=1 # actually disabled
+kPostMessageThirdPartyToThirdPartyDifferentBucketSameOriginBlockedIfStorageIsPartitioned=1 # actually disabled
+
+# https://bugs.chromium.org/p/chromium/issues/detail?id=1173646
+# https://bugs.chromium.org/p/chromium/issues/detail?id=1190167
+# https://github.com/w3ctag/design-reviews/issues/721
+# https://groups.google.com/a/chromium.org/g/blink-dev/c/3Ga0Y2BEz7E/m/jqSvDoUnBAAJ
+SpeculationRulesPrefetchProxy=0 # actually enabled
+
+# Whether to use the new code paths needed to support partitioning Blob URLs.
+# This exists as a kill-switch in case an issue is identified with the Blob
+# URL implementation that causes breakage.
+# TODO(https://crbug.com/1407944): Kill-switch activated - investigate cause of
+# increased renderer hangs.
+kSupportPartitionedBlobUrl=? # actually disabled, wait for bug resolution
+
+# View transitions.
+# See https://www.w3.org/TR/css-view-transitions-1/
+kViewTransition=? # actually disabled
+
+# If enabled, ViewTransition API is supported for navigations including
+# cross-document transitions.
+# See https://drafts.csswg.org/css-view-transitions-1/.
+# https://drafts.csswg.org/css-view-transitions-1/#priv
+# https://drafts.csswg.org/css-view-transitions-1/#sec
+kViewTransitionOnNavigation=? # actually disabled
+
+# Sandbox shouldn't be inherited via document.write.
+# see also https://bugs.chromium.org/p/chromium/issues/detail?id=1186311
+kWarnSandboxIneffective=1 # actually enabled
+
+# Disable sandbox/security-origin mutation via document.open
+# https://bugs.chromium.org/p/chromium/issues/detail?id=1360795
+kDocumentOpenSandboxInheritanceRemoval=? # actually disabled
