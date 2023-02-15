@@ -586,3 +586,41 @@ kWarnSandboxIneffective=1 # actually enabled
 # Disable sandbox/security-origin mutation via document.open
 # https://bugs.chromium.org/p/chromium/issues/detail?id=1360795
 kDocumentOpenSandboxInheritanceRemoval=? # actually disabled
+
+#########
+# v110
+#########
+
+# Whether Dynamic Features are enabled. CCT Intents can override the feature set
+kCCTIntentFeatureOverrides=? # actually enabled
+
+# CCT support for auto-translating to a predefined target language.
+# Adds CCT support for auto-translation to a predefined target language
+# from allowed packages. This is done via a new intent extra.
+kCctAutoTranslate=0 # actually enabled
+
+CrossFramePerformanceTimeline=0 # actually disabled
+
+# By default on Android, when a client is being evicted, it only evicts itself.
+# This differs from Destkop platforms which evict the entire FrameTree along
+# with the topmost viz::Surface. When this feature is enabled, Android will
+# begin also evicting the entire FrameTree.
+# see https://bugs.chromium.org/p/chromium/issues/detail?id=1393349
+kEvictSubtree=1 # actually disabled
+kInnerFrameCompositorSurfaceEviction=1 # actually disabled
+
+# Block drag-drop from some folder
+# see https://source.chromium.org/chromium/chromium/src/+/main:chrome/browser/file_system_access/chrome_file_system_access_permission_context.cc;l=258;drc=e14364652369744ed1a8b9c4a582f11833b35aff;bpv=1;bpt=1?q=kBlockedPaths&sq=&ss=chromium%2Fchromium%2Fsrc
+FileSystemAccessDragAndDropCheckBlocklist=1 # actually disabled
+
+# Enables automatically upgrading main frame navigations to HTTPS.
+# https://bugs.chromium.org/p/chromium/issues/detail?id=1394910
+# (note: only flag, no code actually)
+kHttpsUpgrades=? # actually disabled
+
+kIncomingCallNotifications=0 # actually disabled
+
+# Enables preprocessing requests with the Private State Tokens API Fetch flags
+# set, and handling their responses, according to the protocol.
+# (See https://github.com/WICG/trust-token-api.)
+kPrivateStateTokens=? # actually disabled
