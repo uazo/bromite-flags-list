@@ -624,3 +624,32 @@ kIncomingCallNotifications=0 # actually disabled
 # set, and handling their responses, according to the protocol.
 # (See https://github.com/WICG/trust-token-api.)
 kPrivateStateTokens=? # actually disabled
+
+
+#########
+# v111
+#########
+
+# Block downloads delivered over insecure transports (i.e. not over HTTPS).
+kBlockInsecureDownloads=1 # actually disabled
+
+# Enable WebAssembly JSPI (JavaScript Promise Integration API)
+# see https://v8.dev/blog/jspi
+kEnableExperimentalWebAssemblyJSPI=? # actually disabled
+
+# Enforce that writeable file handles passed to untrusted processes are not
+# backed by executable files.
+kEnforceNoExecutableFileHandles=1 # actualy disabled
+
+# TODO(crbug.com/1140805): Remove this flag eventually.
+# When enabled, move() supports moving local files (i.e. that do not live in
+# the OPFS).
+# TAG review: https://github.com/w3ctag/design-reviews/issues/805
+kFileSystemAccessMoveLocalFiles=0 # actually enabled
+
+# Enables the new implementation of HTTPS-First Mode.
+kHttpsFirstModeV2=? # actually disabled
+
+# Enables reporting ResourceTiming entries for document, who initiated a
+# cancelled navigation in one of their <iframe>.
+kResourceTimingForCancelledNavigationInFrame=0 # actually enabled
