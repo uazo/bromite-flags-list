@@ -653,3 +653,13 @@ kHttpsFirstModeV2=? # actually disabled
 # Enables reporting ResourceTiming entries for document, who initiated a
 # cancelled navigation in one of their <iframe>.
 kResourceTimingForCancelledNavigationInFrame=0 # actually enabled
+
+
+#########
+# v112
+#########
+
+# Enables ADPF (Android Dynamic Performance Framework) for the browser IO
+# thread.
+# see https://source.chromium.org/chromium/chromium/src/+/c8842d0ac93a7fd17716bb840d08e0d4b37cdbe6
+kADPFForBrowserIOThread=? # actually disabled
