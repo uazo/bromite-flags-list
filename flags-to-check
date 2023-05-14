@@ -663,3 +663,34 @@ kResourceTimingForCancelledNavigationInFrame=0 # actually enabled
 # thread.
 # see https://source.chromium.org/chromium/chromium/src/+/c8842d0ac93a7fd17716bb840d08e0d4b37cdbe6
 kADPFForBrowserIOThread=? # actually disabled
+
+
+#########
+# v113
+#########
+
+# Enable the click-to-call feature
+# https://bugs.chromium.org/p/chromium/issues/detail?id=1418774
+kClickToCall=0 # actually disabled
+
+# https://bugs.chromium.org/p/chromium/issues/detail?id=1142516
+kFullscreenPopupWindows=? # actually disabled
+
+# Remove Lots of unnecessary mojo calls from network service to browser main thread
+# https://bugs.chromium.org/p/chromium/issues/detail?id=1425174
+kLessChattyNetworkService=? # actually disabled
+
+# Enable AnimationFrameTimingMonitor, which measures long animation
+# frames. Can be used for UKM or for the perofrmance API.
+# see PerformanceObserver::supportedEntryTypes
+LongAnimationFrameMonitoring=? # actually disabled
+LongAnimationFrameTiming=? # actually disabled
+kLongAnimationFrameUKM=? # actually disabled
+
+# If enabled, renderers look for cached resources from another renderer
+# that has the same process isolation policies. Note that renderers don't
+# use cached resources in other rendereres yet, just record histograms.
+# See https://crbug.com/1414262
+# https://docs.google.com/document/d/1kPVlhMAW7dvo4THf_PsC6ZKf4012_n9lFrhsVpDUjjg/edit
+# https://docs.google.com/document/d/1jI-Itz-_kr8euAdZZI_cm0XY18HsIkc18XFiEL32jRQ/edit
+kRemoteResourceCache=? # actually disabled
