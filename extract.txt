@@ -5,4 +5,4 @@ CREATE VIRTUAL TABLE llvm_base_of USING clangql (base_of, localhost:50051);
 CREATE VIRTUAL TABLE llvm_overridden_by USING clangql (overridden_by, localhost:50051);
 CREATE VIRTUAL TABLE llvm_refs USING clangql (refs, localhost:50051);
 
-SELECT * FROM llvm_symbols WHERE type = "c:$@N@base@S@Feature" ORDER BY Name;
+SELECT * FROM llvm_symbols WHERE type = "c:$@N@base@S@Feature";
