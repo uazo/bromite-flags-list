@@ -30,9 +30,8 @@ jobs:
           
           sqlite3 --version
           docker run -d -p 50051:50051 uazo/bromite-remote-index:$RTAG
-          sleep 1m
+          sleep 3m
           sqlite3 -separator '=%=' <bromite-flags-list/extract.txt >output.txt
-          cat output.txt
           
       - name: Generate
         run: |
