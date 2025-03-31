@@ -694,3 +694,22 @@ kLongAnimationFrameUKM=? # actually disabled
 # https://docs.google.com/document/d/1kPVlhMAW7dvo4THf_PsC6ZKf4012_n9lFrhsVpDUjjg/edit
 # https://docs.google.com/document/d/1jI-Itz-_kr8euAdZZI_cm0XY18HsIkc18XFiEL32jRQ/edit
 kRemoteResourceCache=? # actually disabled
+
+
+#########
+# v114
+#########
+
+# see IsSupportedMathFunction() (third_party/blink/renderer/core/css/css_math_expression_node.cc)
+kCSSExponentialFunctions
+kCSSSteppedValueFunctions
+
+#########
+# v118
+#########
+
+# When enabled, gesture scroll updates that hit a JS touch handlers
+# will be queued normally on CC, enabling coalescing and consistent
+# input handling.
+kQueueBlockingGestureScrolls
+#cc/input/input_handler.cc
