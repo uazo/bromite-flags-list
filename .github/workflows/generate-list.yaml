@@ -8,8 +8,14 @@ on:
         required: true
         default: ''
 
+      index_url:
+        description: 'full url of idex'
+        required: true
+        default: ''
+
 env:
   RTAG: ${{ github.event.inputs.rtag }}
+  INDEX_URL: ${{ github.event.inputs.index_url }}
   
 jobs:
   build:
@@ -29,7 +35,35 @@ jobs:
           rm ClangQL.zip
           
           sqlite3 --version
-          docker run -d -p 50051:50051 uazo/bromite-remote-index:$RTAG
+
+          # docker run -d -p 50051:50051 uazo/bromite-remote-index:$RTAG
+          apt-get update -y && apt-get upgrade -y
+          
+          apt-get install -y cron python3 python3-requests unzip nginx-light wget unzip
+          
+          apt-get install -y --no-install-recommends python3-pip && \
+            pip3 install j2cli --break-system-packages && \
+            apt-get remove -y python3-pip && \
+            apt-get autoremove -y
+          
+          rm -rf /var/www/html/*
+
+          wget https://github.com/clangd/clangd/releases/download/snapshot_20260222/clangd_indexing_tools-linux-snapshot_20260222.zip && \
+            unzip clangd_indexing_tools-linux-snapshot_20260222.zip && \
+            rm clangd_indexing_tools-linux-snapshot_20260222.zip
+
+          wget -O index.zip $INDEX_URL
+          unzip index.zip
+
+          IDX=$(echo *.idx)
+
+          ./snapshot_20260222/bin/clangd-index-server \
+            $IDX \
+            /chromium/src \
+            --server-address="0.0.0.0:50051" \
+            --limit-results=99999999999 \
+            >/dev/null 2>&1 &
+
           sleep 3m
           sqlite3 -separator '=%=' <bromite-flags-list/extract.txt >output.txt
 
@@ -52,4 +86,3 @@ jobs:
         with:
           name: output.tar.gz
           path: output.tar.gz
-          
