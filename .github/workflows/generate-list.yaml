@@ -64,7 +64,7 @@ jobs:
             --limit-results=99999999999 \
             >/dev/null 2>&1 &
 
-          sleep 5m
+          timeout 10m bash -c 'until echo > /dev/tcp/localhost/50051 2>/dev/null; do sleep 10; done'
           sqlite3 -separator '=%=' <bromite-flags-list/extract.txt >output.txt
 
       - name: Publish
