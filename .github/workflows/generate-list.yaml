@@ -64,7 +64,7 @@ jobs:
             --limit-results=99999999999 \
             >/dev/null 2>&1 &
 
-          sleep 3m
+          sleep 5m
           sqlite3 -separator '=%=' <bromite-flags-list/extract.txt >output.txt
 
       - name: Publish
