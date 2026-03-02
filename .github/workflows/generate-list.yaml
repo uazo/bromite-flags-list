@@ -53,6 +53,8 @@ jobs:
           wget -O index.zip $INDEX_URL
           unzip index.zip
 
+      - name: Generate output.txt
+        run: |
           IDX=$(echo *.idx)
 
           ./snapshot_20260222/bin/clangd-index-server \
