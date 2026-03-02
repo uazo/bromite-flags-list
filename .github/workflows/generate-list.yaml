@@ -41,10 +41,10 @@ jobs:
           
           sudo apt install -y --no-install-recommends python3-pip && \
             pip3 install j2cli --break-system-packages && \
-            apt-get remove -y python3-pip && \
-            apt-get autoremove -y
+            sudo apt remove -y python3-pip && \
+            sudo apt autoremove -y
           
-          rm -rf /var/www/html/*
+          sudo rm -rf /var/www/html/*
 
           wget https://github.com/clangd/clangd/releases/download/snapshot_20260222/clangd_indexing_tools-linux-snapshot_20260222.zip && \
             unzip clangd_indexing_tools-linux-snapshot_20260222.zip && \
