@@ -57,14 +57,14 @@ jobs:
         run: |
           IDX=$(echo *.idx)
 
-          ./snapshot_20260222/bin/clangd-index-server \
+          ./clangd_snapshot_20260222/bin/clangd-index-server \
             $IDX \
             /chromium/src \
             --server-address="0.0.0.0:50051" \
             --limit-results=99999999999 \
             >/dev/null 2>&1 &
 
-          timeout 30m bash -c 'until echo > /dev/tcp/localhost/50051 2>/dev/null; do sleep 10; done'
+          timeout 5m bash -c 'until echo > /dev/tcp/localhost/50051 2>/dev/null; do sleep 10; done'
           sqlite3 -separator '=%=' <bromite-flags-list/extract.txt >output.txt
 
       - name: Publish
