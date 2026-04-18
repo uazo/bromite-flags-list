@@ -1,4 +1,5 @@
 .load /home/runner/work/bromite-flags-list/bromite-flags-list/libclangql
+.load /libclangql
 
 CREATE VIRTUAL TABLE llvm_symbols USING clangql (symbols, localhost:50051);
 CREATE VIRTUAL TABLE llvm_base_of USING clangql (base_of, localhost:50051);
